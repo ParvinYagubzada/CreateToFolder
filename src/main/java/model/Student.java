@@ -20,13 +20,13 @@ public class Student {
     private String name;
     private String surname;
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "relation_student_teacher",
             joinColumns = @JoinColumn(name = "student_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "teacher_id", referencedColumnName = "id"))
     private List<Teacher> teachers;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "grade_id", referencedColumnName = "id")
     private Grade grade;
 }

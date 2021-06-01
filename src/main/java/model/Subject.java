@@ -15,6 +15,7 @@ public class Subject {
     @Id
     private Integer id;
     private String name;
+
     @OneToOne(mappedBy = "subject")
     private Teacher teacher;
 }

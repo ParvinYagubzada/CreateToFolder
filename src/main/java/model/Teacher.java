@@ -16,6 +16,7 @@ public class Teacher {
     private Integer id;
     private String name;
     private String surname;
+
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "subject_id", referencedColumnName = "id")
     private Subject subject;
